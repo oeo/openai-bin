@@ -1,0 +1,16 @@
+{
+  "name": "module",
+  "description": "",
+  "version": "0.0.1",
+  "main": "./build/module.js",
+  "author": "taky@taky.com",
+  "repository": "tosadvisor/module",
+  "keywords": [
+    "taky"
+  ],
+  "dependencies": {
+    "request": "^2.88.2",
+    "wegweg": "^0.21.0",
+    "yaml": "^2.1.3"
+  }
+}
