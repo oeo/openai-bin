@@ -9,6 +9,7 @@
     "taky"
   ],
   "dependencies": {
+    "commander": "^9.4.1",
     "request": "^2.88.2",
     "wegweg": "^0.21.0",
     "yaml": "^2.1.3"

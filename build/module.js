@@ -96,7 +96,13 @@
       });
     })(this)((function(_this) {
       return function() {
-        return cb(e, r);
+        if (e) {
+          return cb(e);
+        }
+        if (opt.raw) {
+          return cb(null, r);
+        }
+        return cb(null, _.first(r.choices).text.trim());
       };
     })(this));
   };
@@ -118,7 +124,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 26
+          lineno: 28
         }));
         __iced_deferrals._fulfill();
       });

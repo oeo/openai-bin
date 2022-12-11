@@ -16,7 +16,9 @@ module.exports = lib = {}
 
 lib.query = (opt,cb) ->
   await openai.query opt, defer e,r
-  return cb e,r
+  if e then return cb e
+  if opt.raw then return cb null, r
+  return cb null, _.first(r.choices).text.trim()
 
 ##
 if !module.parent

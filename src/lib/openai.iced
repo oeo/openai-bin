@@ -24,3 +24,4 @@ if !module.parent
   await openai.query {query:'Write a short poem about a girl named Ange'}, defer e,r
   console.log e
   console.log r
+
