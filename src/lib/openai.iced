@@ -13,7 +13,7 @@ openai.query = (opt,cb) ->
       Authorization: "Bearer #{API_KEY}"
     json:
       prompt: opt.prompt
-      max_tokens: opt.tokens ? 4000
+      max_tokens: opt.tokens ? 3000
     , (err, response, body) ->
       if err
         cb err

@@ -18,6 +18,8 @@ lib.query = (opt,cb) ->
   await openai.query opt, defer e,r
   if e then return cb e
   if opt.raw then return cb null, r
+  if r.error
+    return cb new Error(r.error.message)
   return cb null, _.first(r.choices).text.trim()
 
 ##

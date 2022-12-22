@@ -80,7 +80,7 @@
 
   prog.argument('[prompt...]', {
     isDefault: true
-  }).summary('query openai divinci-003').option('-t <int>', 'number of tokens to use', 1000).option('-r --raw').showHelpAfterError().action(function(prompt, options) {
+  }).summary('query openai divinci-003').option('-t <int>', 'number of tokens to use', 3500).option('-r --raw').action(function(prompt, options) {
     var e, r, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
@@ -106,7 +106,7 @@
                   return prompt = arguments[1];
                 };
               })(),
-              lineno: 38
+              lineno: 37
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -140,66 +140,7 @@
                 return r = arguments[1];
               };
             })(),
-            lineno: 48
-          }));
-          __iced_deferrals._fulfill();
-        })(function() {
-          if (e) {
-            throw e;
-          }
-          log(r);
-          return exit(0);
-        });
-      };
-    })(this));
-  });
-
-  prog.command('vim').summary('query openai divinci-003').description('opens editor for multi-line prompts').option('-t <int>', 'number of tokens to use', 1000).option('-r --raw').showHelpAfterError().action(function(options) {
-    var e, prompt, r, ___iced_passed_deferral, __iced_deferrals, __iced_k;
-    __iced_k = __iced_k_noop;
-    ___iced_passed_deferral = iced.findDeferral(arguments);
-    (function(_this) {
-      return (function(__iced_k) {
-        __iced_deferrals = new iced.Deferrals(__iced_k, {
-          parent: ___iced_passed_deferral,
-          filename: "/home/taky/www/openai-scripts/src/cli.iced"
-        });
-        vim(__iced_deferrals.defer({
-          assign_fn: (function() {
-            return function() {
-              e = arguments[0];
-              return prompt = arguments[1];
-            };
-          })(),
-          lineno: 62
-        }));
-        __iced_deferrals._fulfill();
-      });
-    })(this)((function(_this) {
-      return function() {
-        if (e) {
-          throw e;
-        }
-        if (!prompt) {
-          throw new Error('prompt_null');
-        }
-        (function(__iced_k) {
-          __iced_deferrals = new iced.Deferrals(__iced_k, {
-            parent: ___iced_passed_deferral,
-            filename: "/home/taky/www/openai-scripts/src/cli.iced"
-          });
-          openai.query({
-            prompt: prompt,
-            tokens: options.tokens,
-            raw: options.raw
-          }, __iced_deferrals.defer({
-            assign_fn: (function() {
-              return function() {
-                e = arguments[0];
-                return r = arguments[1];
-              };
-            })(),
-            lineno: 69
+            lineno: 47
           }));
           __iced_deferrals._fulfill();
         })(function() {

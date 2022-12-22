@@ -60,7 +60,7 @@
       },
       json: {
         prompt: opt.prompt,
-        max_tokens: (_ref = opt.tokens) != null ? _ref : 4000
+        max_tokens: (_ref = opt.tokens) != null ? _ref : 3000
       }
     }, function(err, response, body) {
       if (err) {

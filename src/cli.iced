@@ -24,7 +24,7 @@ prog
 prog
   .argument '[prompt...]', {isDefault:yes}
   .summary 'query openai divinci-003'
-  .option '-t <int>', 'number of tokens to use', 1000
+  .option '-t <int>', 'number of tokens to use', 3500
   .option '-r --raw'
   .action (prompt,options) ->
     if stdin

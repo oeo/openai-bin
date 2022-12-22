@@ -102,6 +102,9 @@
         if (opt.raw) {
           return cb(null, r);
         }
+        if (r.error) {
+          return cb(new Error(r.error.message));
+        }
         return cb(null, _.first(r.choices).text.trim());
       };
     })(this));
@@ -124,7 +127,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 28
+          lineno: 30
         }));
         __iced_deferrals._fulfill();
       });
