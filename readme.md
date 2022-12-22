@@ -2,5 +2,6 @@
 
 ## install
 - npm install
-- use the `ai` bin
+- create `./env.yml`
+- use the `ai` binary
 
