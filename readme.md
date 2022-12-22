@@ -1,5 +1,6 @@
+<img src="example.png"/>
+
 ## install
 - npm install
-- then use the bin
+- use the `ai` bin
 
-<img src="example.png"/>
