@@ -1,2 +1,0 @@
-- npm install
-- then use the bin
