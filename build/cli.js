@@ -97,7 +97,7 @@
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral,
-              filename: "/home/taky/www/openai-scripts/src/cli.iced"
+              filename: "/Users/taky/www/openai-bin/src/cli.iced"
             });
             vim(__iced_deferrals.defer({
               assign_fn: (function() {
@@ -127,7 +127,7 @@
         (function(__iced_k) {
           __iced_deferrals = new iced.Deferrals(__iced_k, {
             parent: ___iced_passed_deferral,
-            filename: "/home/taky/www/openai-scripts/src/cli.iced"
+            filename: "/Users/taky/www/openai-bin/src/cli.iced"
           });
           openai.query({
             prompt: prompt,

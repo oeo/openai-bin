@@ -1,5 +1,5 @@
 (function() {
-  var API_KEY, e, iced, openai, r, request, __iced_deferrals, __iced_k, __iced_k_noop,
+  var API_KEY, e, iced, openai, p, r, request, __iced_deferrals, __iced_k, __iced_k_noop,
     __slice = [].slice;
 
   iced = {
@@ -50,35 +50,53 @@
 
   module.exports = openai = {};
 
+
+  /*
+  curl https://api.openai.com/v1/chat/completions \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -d '{
+      "model": "gpt-3.5-turbo",
+      "messages": [{"role": "user", "content": "Hello!"}]
+    }'
+   */
+
   openai.query = function(opt, cb) {
     var url, _ref;
-    url = "https://api.openai.com/v1/engines/text-davinci-003/completions";
+    url = "https://api.openai.com/v1/chat/completions";
     return request.post({
       url: url,
       headers: {
         Authorization: "Bearer " + API_KEY
       },
       json: {
-        prompt: opt.prompt,
-        max_tokens: (_ref = opt.tokens) != null ? _ref : 3000
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            role: "user",
+            content: opt.prompt
+          }
+        ],
+        max_tokens: (_ref = opt.tokens) != null ? _ref : void 0
       }
     }, function(err, response, body) {
       if (err) {
         return cb(err);
       } else {
-        return cb(null, body);
+        return cb(null, body.choices[0].message.content);
       }
     });
   };
 
   if (!module.parent) {
+    p = "I want you to generate a Jekyll-compatible seo friendly markdown article that is SEO optimized using the rules I provide below. Here is the format that Jekyll accepts:\n\n```markdown\n---\nlayout: post\ntitle:  \"This Should Be The Title\"\ndescription: \"This should be an SEO Description\"\ncategories: [seo, keywords, etc] \n---\n\nThis is the markdown content for the HTML of the page.\n\n```\n\nHere are the rules:\n\n- You do not need to use H1 tags, please begin by using H2 tags (##) because the H1 tags will be automatically generated. \n- If you decide to do a top list, only do top 5.\n- Generate the entire post.\n- Make liberal use of H2, H3 and potentially even H4 tags instead of overly using lists.\n- Make the tonality of the article informative while avoiding being overly structured, and make the reading level roughly 8th grade.\n- Use informal language that is casual.\n- Look up the title for the page from the sitemap I gave above, if none is provided then you may create one.\n- Never begin with \"Introduction\" and never end with \"Conclusion\".\n\nThe keyword for generation is \"Best Bone Broth Powders\". ";
     (function(_this) {
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
-          filename: "/home/taky/www/openai-scripts/src/lib/openai.iced"
+          filename: "/Users/taky/www/openai-bin/src/lib/openai.iced"
         });
         openai.query({
-          query: 'Write a short poem about a girl named Ange'
+          prompt: p
         }, __iced_deferrals.defer({
           assign_fn: (function() {
             return function() {
@@ -86,7 +104,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 23
+          lineno: 66
         }));
         __iced_deferrals._fulfill();
       });

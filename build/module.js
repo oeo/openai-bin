@@ -80,7 +80,7 @@
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
           parent: ___iced_passed_deferral,
-          filename: "/home/taky/www/openai-scripts/src/module.iced",
+          filename: "/Users/taky/www/openai-bin/src/module.iced",
           funcname: "query"
         });
         openai.query(opt, __iced_deferrals.defer({
@@ -115,7 +115,7 @@
     (function(_this) {
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
-          filename: "/home/taky/www/openai-scripts/src/module.iced"
+          filename: "/Users/taky/www/openai-bin/src/module.iced"
         });
         lib.query({
           prompt: 'write something nice about ange, she\'s a sweet girl who doesn\'t need friends but needs encouragement',
