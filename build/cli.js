@@ -80,7 +80,7 @@
 
   prog.argument('[prompt...]', {
     isDefault: true
-  }).summary('query openai divinci-003').option('-t <int>', 'number of tokens to use', 3500).option('-r --raw').action(function(prompt, options) {
+  }).summary('query openai gpt3.5 turbo').option('-t <int>', 'number of tokens to use', void 0).option('-r --raw').action(function(prompt, options) {
     var e, r, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);

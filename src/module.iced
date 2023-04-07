@@ -20,7 +20,7 @@ lib.query = (opt,cb) ->
   if opt.raw then return cb null, r
   if r.error
     return cb new Error(r.error.message)
-  return cb null, _.first(r.choices).text.trim()
+  return cb null, _.first(r.choices).message.content.trim()
 
 ##
 if !module.parent

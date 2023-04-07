@@ -33,7 +33,7 @@ openai.query = (opt,cb) ->
       if err
         cb err
       else
-        cb null, body.choices[0].message.content
+        cb null, body
 
 if !module.parent
   p = """

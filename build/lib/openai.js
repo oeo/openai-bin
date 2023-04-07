@@ -83,7 +83,7 @@
       if (err) {
         return cb(err);
       } else {
-        return cb(null, body.choices[0].message.content);
+        return cb(null, body);
       }
     });
   };
