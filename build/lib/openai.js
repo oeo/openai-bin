@@ -1,5 +1,5 @@
 (function() {
-  var API_KEY, e, iced, openai, p, r, request, __iced_deferrals, __iced_k, __iced_k_noop,
+  var API_KEY, e, iced, log, openai, p, r, request, __iced_deferrals, __iced_k, __iced_k_noop,
     __slice = [].slice;
 
   iced = {
@@ -44,6 +44,8 @@
   };
   __iced_k = __iced_k_noop = function() {};
 
+  log = console.log;
+
   request = require('request');
 
   API_KEY = process.env.OPENAI_API_KEY;
@@ -70,7 +72,7 @@
         Authorization: "Bearer " + API_KEY
       },
       json: {
-        model: "gpt-3.5-turbo",
+        model: 'gpt-4-1106-preview',
         messages: [
           {
             role: "user",
@@ -104,7 +106,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 66
+          lineno: 68
         }));
         __iced_deferrals._fulfill();
       });

@@ -44,13 +44,7 @@
   };
   __iced_k = __iced_k_noop = function() {};
 
-  log = function() {
-    var x;
-    x = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-    try {
-      return console.log.apply(console, x);
-    } catch (_error) {}
-  };
+  log = console.log;
 
   _ = require('wegweg')({
     globals: false,

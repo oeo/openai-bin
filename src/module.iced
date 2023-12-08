@@ -1,5 +1,5 @@
 # vim: set expandtab tabstop=2 shiftwidth=2 softtabstop=2
-log = (x...) -> try console.log x...
+{log} = console
 
 _ = require('wegweg')({
   globals: no

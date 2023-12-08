@@ -24,7 +24,7 @@ prog
 prog
   .argument '[prompt...]', {isDefault:yes}
   .summary 'query openai gpt3.5 turbo'
-  .option '-t <int>', 'number of tokens to use', undefined 
+  .option '-t <int>', 'number of tokens to use', undefined
   .option '-r --raw'
   .action (prompt,options) ->
     if stdin
