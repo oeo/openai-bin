@@ -70,7 +70,6 @@
     var e, r, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
-    log(/opt/, opt);
     (function(_this) {
       return (function(__iced_k) {
         __iced_deferrals = new iced.Deferrals(__iced_k, {
@@ -85,7 +84,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 18
+          lineno: 17
         }));
         __iced_deferrals._fulfill();
       });
@@ -122,7 +121,7 @@
               return r = arguments[1];
             };
           })(),
-          lineno: 31
+          lineno: 30
         }));
         __iced_deferrals._fulfill();
       });

@@ -15,7 +15,6 @@ openai = require './lib/openai'
 module.exports = lib = {}
 
 lib.query = (opt,cb) ->
-  log /opt/, opt
   await openai.query opt, defer e,r
   if e then return cb e
   if opt.raw then return cb null, r
