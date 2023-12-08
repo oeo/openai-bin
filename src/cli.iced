@@ -22,9 +22,10 @@ prog
   .description 'cli wrapper for openai'
 
 prog
-  .argument '[prompt...]', {isDefault:yes}
-  .summary 'query openai gpt3.5 turbo'
-  .option '-t <int>', 'number of tokens to use', undefined
+  .argument 'prompt', {isDefault:yes}
+  .summary 'query openai with prompt'
+  .option '-t --tokens <int>', 'number of tokens to use', undefined
+  .option '-m --model <model>', 'model to use (examples: gpt3.5-turbo, gpt-4, gpt-4-0613, gpt-3.5-turbo-16k-0613)', 'gpt3.5-turbo'
   .option '-r --raw'
   .action (prompt,options) ->
     if stdin
@@ -44,6 +45,7 @@ prog
     await openai.query {
       prompt: prompt
       tokens: options.tokens
+      model: options.model
       raw: options.raw
     }, defer e,r
     if e then throw e

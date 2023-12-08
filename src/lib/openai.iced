@@ -24,8 +24,8 @@ openai.query = (opt,cb) ->
     headers:
       Authorization: "Bearer #{API_KEY}"
     json:
-      #model: "gpt-3.5-turbo"
-      model: 'gpt-4-1106-preview'
+      model: opt.model ? "gpt-3.5-turbo"
+      #model: 'gpt-4-1106-preview'
       messages: [{
         role: "user"
         content: opt.prompt

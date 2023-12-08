@@ -78,9 +78,9 @@
 
   prog.name('ai').description('cli wrapper for openai');
 
-  prog.argument('[prompt...]', {
+  prog.argument('prompt', {
     isDefault: true
-  }).summary('query openai gpt3.5 turbo').option('-t <int>', 'number of tokens to use', void 0).option('-r --raw').action(function(prompt, options) {
+  }).summary('query openai with prompt').option('-t --tokens <int>', 'number of tokens to use', void 0).option('-m --model <model>', 'model to use (examples: gpt3.5-turbo, gpt-4, gpt-4-0613, gpt-3.5-turbo-16k-0613)', 'gpt3.5-turbo').option('-r --raw').action(function(prompt, options) {
     var e, r, ___iced_passed_deferral, __iced_deferrals, __iced_k;
     __iced_k = __iced_k_noop;
     ___iced_passed_deferral = iced.findDeferral(arguments);
@@ -106,7 +106,7 @@
                   return prompt = arguments[1];
                 };
               })(),
-              lineno: 37
+              lineno: 38
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -132,6 +132,7 @@
           openai.query({
             prompt: prompt,
             tokens: options.tokens,
+            model: options.model,
             raw: options.raw
           }, __iced_deferrals.defer({
             assign_fn: (function() {
@@ -140,7 +141,7 @@
                 return r = arguments[1];
               };
             })(),
-            lineno: 47
+            lineno: 49
           }));
           __iced_deferrals._fulfill();
         })(function() {

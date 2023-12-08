@@ -64,7 +64,7 @@
    */
 
   openai.query = function(opt, cb) {
-    var url, _ref;
+    var url, _ref, _ref1;
     url = "https://api.openai.com/v1/chat/completions";
     return request.post({
       url: url,
@@ -72,14 +72,14 @@
         Authorization: "Bearer " + API_KEY
       },
       json: {
-        model: 'gpt-4-1106-preview',
+        model: (_ref = opt.model) != null ? _ref : "gpt-3.5-turbo",
         messages: [
           {
             role: "user",
             content: opt.prompt
           }
         ],
-        max_tokens: (_ref = opt.tokens) != null ? _ref : void 0
+        max_tokens: (_ref1 = opt.tokens) != null ? _ref1 : void 0
       }
     }, function(err, response, body) {
       if (err) {
